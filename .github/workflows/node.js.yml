@@ -29,6 +29,7 @@ jobs:
     - run: npm install
     - run: npm audit
     - run: npm run development 
+    - run: npm install lodash
     
   deploy:
      needs: build
