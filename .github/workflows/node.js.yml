@@ -26,11 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm audit
-    - run: npm run development 
-    - run: npm install lodash
-    
+    - run: yarn install
+    - run: yarn development
+      env:
+        CI: true
   deploy:
      needs: build
      runs-on: ubuntu-latest
