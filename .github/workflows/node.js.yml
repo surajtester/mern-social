@@ -42,15 +42,9 @@ jobs:
          username: administration
          password: Pass@123456789
          port: 22
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.6.0
-        with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-        mongodb-replica-set: test-rs
-        mongodb-port: 3000
-
-            script:
-                    cd ~/node-github-demo
-                    git pull origin master
-                    npm install --production
-                    pm2 restart node-app
+         script:
+                cd ~/node-github-demo
+                git pull origin master
+                npm install --production
+                pm2 restart node-app
+                http://localhost:3000 
